@@ -179,8 +179,9 @@ nav ul li a:hover::after {
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex; /* Mengubah dari grid ke flex*/
+    flex-wrap: wrap; /* Memungkinkan item untuk melompat ke baris baru*/
+    justify-content: center; /* Memusatkan item secara horizontal di setiap baris*/
     gap: 2rem;
 }
 
@@ -191,6 +192,7 @@ nav ul li a:hover::after {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1 1 150px; /* Memungkinkan item untuk tumbuh dan menyusut dengan basis 150px */
 }
 
 .skill-card:hover {
