@@ -14,7 +14,7 @@ nav ul li a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #10B981; /* Menggunakan warna emerald-500 secara langsung */
+    background-color: #4F46E5; /* Warna indigo-600 */
     transition: width 0.3s ease-out;
 }
 

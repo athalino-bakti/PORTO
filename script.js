@@ -43,15 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Here you would normally send the form data to a server
-        alert('Message sent successfully!');
-        this.reset();
-    });
+   
 
     // Scroll animation
     const fadeElements = document.querySelectorAll('.fade-in');
