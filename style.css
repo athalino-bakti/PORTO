@@ -1,5 +1,5 @@
 /* Custom styles yang tidak bisa diganti penuh dengan Tailwind atau untuk override spesifik */
-
+@import "tailwindcss";
 /* Font family */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
