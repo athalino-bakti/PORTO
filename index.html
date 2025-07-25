@@ -270,51 +270,195 @@
                 <h3 class="text-lg font-semibold mb-2">Visual Paradigm</h3>
                 <p class="text-gray-600">UML, BPMN, diagramming tool</p>
             </div>
+        </div>
+    </section>
 
-    <section class="py-20 px-10 bg-white" id="experience">
+    <section class="py-24 px-4 bg-white" id="experience">
         <div class="text-center mb-12 fade-in">
             <h2 class="text-4xl text-gray-900 mb-4">Experience</h2>
             <p class="text-lg text-gray-600">My work experiences</p>
         </div>
-        <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
-            <!-- PSI Practicum Assistant -->
-            <div class="flex-1 flex flex-col items-center bg-gray-100 rounded-lg p-8 shadow-md fade-in">
-                <div class="w-80 h-56 flex items-center justify-center mb-4">
-                    <img src="images/PSI.jpg" alt="Foto Pengalaman Kerja di SAG Laboratory" class="object-contain rounded-lg w-full h-full" style="max-width: 20rem; max-height: 14rem;">
+        <div class="relative max-w-7xl mx-auto">
+            <!-- Slider Container -->
+            <div id="experience-slider" class="flex transition-transform duration-500 ease-in-out overflow-x-auto snap-x snap-mandatory px-2">
+                <!-- Slide 1 -->
+                <div class="flex flex-col md:flex-row gap-8 min-w-full snap-center">
+                    <!-- Card 1 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/PSI.jpg" alt="Foto Pengalaman Kerja di SAG Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">PSI Practicum Assistant</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>SAG Laboratory</strong></span><span class="block">Juni 2024 - Desember 2024</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Taught over 400+ students per semester in hands-on sessions using Microsoft Word, Excel, and Canva</li>
+                                <li>Helped increase average student grades by 15–20% through interactive and practical guidance</li>
+                                <li>Conducted 30+ practicum sessions focusing on real-world document creation, data analysis, and visual design</li>
+                                <li>Provided 1-on-1 support to more than 50 students, ensuring personalized assistance and improved comprehension</li>
+                                <li>Developed and delivered 3 customized teaching modules tailored for academic and professional use cases</li>
+                                <li>Improved student engagement and participation rates by 25% through dynamic teaching methods</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-1">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/DASPRO.png" alt="Foto Pengalaman Kerja di DASPRO Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Database System Practicum Assistant</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>DASPRO Laboratory</strong></span><span class="block">Februari 2025 - Mei 2025</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Assisted over 400+ students per semester in understanding core database concepts such as SQL, ERD, normalization, and data manipulation</li>
+                                <li>Supported the delivery of 25+ hands-on practicum sessions using tools like MySQL and phpMyAdmin</li>
+                                <li>Improved students' practical database implementation scores by 18–22% on average through personalized feedback and mentoring</li>
+                                <li>Provided individual consultations to more than 40 students struggling with database logic and queries</li>
+                                <li>Created 3+ interactive learning materials to enhance student engagement and retention of database concepts</li>
+                                <li>Achieved over 90% student satisfaction rate in end-of-semester practicum feedback surveys</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-2">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/EDM.png" alt="EDM Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Study Group Member</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>EDM Laboratory</strong></span><span class="block">December 2024 - Ongoing</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Gained hands-on experience with 5+ data tools, including Python (Pandas), Excel, Tableau, and Google Data Studio</li>
+                                <li>Improved data analysis and visualization skills by 40%, based on self-assessment and project outcomes</li>
+                                <li>Attended over 25 study sessions, focusing on data processing, analytics, and visualization</li>
+                                <li>Collaborated with 15+ peers on solving case studies and presenting insights from data</li>
+                                <li>Contributed to the creation of 3+ interactive dashboards and visual storytelling projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-3">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/EISD.png" alt="EISD Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Study Group Member</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>EISD Laboratory</strong></span><span class="block">May 2025 - Ongoing</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Processed and entered large volumes of data with 99.5% accuracy rate</li>
+                                <li>Worked with multiple data formats including Excel, Google Sheets, and database systems</li>
+                                <li>Maintained data integrity and performed quality checks on entered information</li>
+                                <li>Met strict deadlines while handling confidential and sensitive data</li>
+                                <li>Developed efficient data entry workflows that improved processing speed by 30%</li>
+                                <li>Collaborated with clients to understand specific data requirements and formatting needs</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">PSI Practicum Assistant</h3>
-                    <p class="text-gray-700 font-bold mb-1"><strong>SAG Laboratory</strong> | Juni 2024 - Desember 2024</p>
-                    <ul class="text-gray-600 text-justify list-disc list-inside space-y-2 text-sm mt-4">
-                        <li>Taught over 400+ students per semester in hands-on sessions using Microsoft Word, Excel, and Canva</li>
-                        <li>Helped increase average student grades by 15–20% through interactive and practical guidance</li>
-                        <li>Conducted 30+ practicum sessions focusing on real-world document creation, data analysis, and visual design</li>
-                        <li>Provided 1-on-1 support to more than 50 students, ensuring personalized assistance and improved comprehension</li>
-                        <li>Developed and delivered 3 customized teaching modules tailored for academic and professional use cases</li>
-                        <li>Improved student engagement and participation rates by 25% through dynamic teaching methods</li>
-                    </ul>
+                <!-- Slide 2 -->
+                <div class="flex flex-col md:flex-row gap-8 min-w-full snap-center">
+                    <!-- Card 5 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-4">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/GDGOC.png" alt="Google Developer Group On Campus" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Study Group Member</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>Google Developer Group On Campus TelU</strong></span><span class="block">December 2024 - May 2025</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Completed 30+ hours of structured training in HTML, CSS, JavaScript, and modern frameworks</li>
+                                <li>Participated in weekly peer code reviews, resulting in 20% faster debugging cycles</li>
+                                <li>Collaborated in 5 team-based coding challenges to improve project delivery and teamwork</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-5">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/acarawr.jpg" alt="Market day 2025" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Event Division</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>Marketday TelU 2025</strong></span><span class="block">Apr 2025 - May 2025</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Coordinated over 5 scheduled performances and activities throughout the event</li>
+                                <li>Managed logistics and technical setup for 148 student business booths involving 1,500+ participants</li>
+                                <li>Communicated with 30+ vendors and stakeholders to ensure smooth execution</li>
+                                <li>Resolved 10+ on-site technical and coordination issues in real-time, maintaining event flow</li>
+                                <li>Contributed to achieving a 95% event satisfaction rate based on post-event feedback</li>
+                                <li>Helped execute an event with zero major disruptions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-6">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/UCREW.png" alt="Microsoft Ucrew" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Public Relations Staff</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>Microsoft University Crew Telkom University</strong></span><span class="block">Oct 2023 - Dec 2023</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Served as Master of Ceremony in 2 Microsoft campus events with 200+ participants</li>
+                                <li>Created 10+ copywriting content pieces and social media captions for @ucrewtelkom</li>
+                                <li>Supported digital literacy awareness campaigns and contributed to student engagement growth by 30% during campaign weeks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-7">
+                        <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
+                            <img src="images/Messengger.JPG" alt="Cyvero" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
+                        </div>
+                        <div class="flex-grow text-center">
+                            <h3 class="text-xl font-semibold mb-1 text-gray-900">Coordinator of Messenger Division</h3>
+                            <p class="text-gray-700 font-bold mb-1 text-base"><span class="block"><strong>Cyvero HMSI</strong></span><span class="block">Jun 2024 - Dec 2024</span></p>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left"></ul>
+                                <li>Coordinated media partnerships with 20+ external organizations and communities</li>
+                                <li>Arranged guest star appearances and finalized communication logistics for main event</li>
+                                <li>Designed and scheduled 20+ engaging Instagram posts and broadcast messages to 900+ followers</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Database System Practicum Assistant -->
-            <div class="flex-1 flex flex-col items-center bg-gray-100 rounded-lg p-8 shadow-md fade-in delay-1">
-                <div class="w-80 h-56 flex items-center justify-center mb-4">
-                    <img src="images/DASPRO.png" alt="Foto Pengalaman Kerja di DASPRO Laboratory" class="object-contain rounded-lg w-full h-full" style="max-width: 20rem; max-height: 14rem;">
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Database System Practicum Assistant</h3>
-                    <p class="text-gray-700 font-bold mb-1"><strong>DASPRO Laboratory</strong> | Februari 2025 - Mei 2025</p>
-                    <ul class="text-gray-600 text-justify list-disc list-inside space-y-2 text-sm mt-4">
-                        <li>Assisted over 4000+ students per semester in understanding core database concepts such as SQL, ERD, normalization, and data manipulation</li>
-                        <li>Supported the delivery of 25+ hands-on practicum sessions using tools like MySQL and phpMyAdmin</li>
-                        <li>Improved students’ practical database implementation scores by 18–22% on average through personalized feedback and mentoring</li>
-                        <li>Provided individual consultations to more than 40 students struggling with database logic and queries</li>
-                        <li>Created 3+ interactive learning materials to enhance student engagement and retention of database concepts</li>
-                        <li>Achieved over 90% student satisfaction rate in end-of-semester practicum feedback surveys</li>
-                    </ul>
-                </div>
+            <!-- Slider Controls -->
+            <div class="flex justify-center mt-8 space-x-6">
+                <button id="exp-prev" aria-label="Previous" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-800 transition">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button id="exp-next" aria-label="Next" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-800 transition">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
             </div>
         </div>
     </section>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.getElementById('experience-slider');
+        const prevBtn = document.getElementById('exp-prev');
+        const nextBtn = document.getElementById('exp-next');
+        const slides = slider.querySelectorAll('.min-w-full');
+        let currentIndex = 0;
+
+        function scrollToSlide(index) {
+            const slide = slides[index];
+            if (slide) {
+                slider.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+            }
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = Math.max(0, currentIndex - 1);
+            scrollToSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = Math.min(slides.length - 1, currentIndex + 1);
+            scrollToSlide(currentIndex);
+        });
+    });
+    </script>
 
     <section class="py-20 px-10" id="projects">
         <div class="text-center mb-12 fade-in">
@@ -376,7 +520,7 @@
         </div>
     </section>
 
-<section class="py-20 px-10 bg-gray-100" id="contact">
+    <section class="py-20 px-10 bg-gray-100" id="contact">
         <div class="text-center mb-12 fade-in">
             <h2 class="text-4xl text-gray-900 mb-4">Get In Touch</h2>
             <p class="text-lg text-gray-600">Let's work together</p>
@@ -423,16 +567,11 @@
         </div>
     </section>
 
-    
-
-        <!-- Built with section moved below contact -->
-        <footer class="bg-gray-900 text-white text-center py-8 px-10 fade-in delay-2">
+    <footer class="bg-gray-900 text-white text-center py-8 px-10 fade-in delay-2">
         <p class="mb-4">&copy; <span id="year"></span> Your Name. All rights reserved.</p>
         <p class="text-sm">Built with ❤️ in Jakarta</p>
-        </footer>
-        
+    </footer>
 
-        
     <script src="script.js"></script>
 </body>
 </html>

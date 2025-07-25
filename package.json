@@ -3,6 +3,6 @@
     "dev": "tailwindcss -i ./assets/css/input.css -o ./public/css/output.css --watch"
   },
   "dependencies": {
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^4.1.11"
   }
 }
