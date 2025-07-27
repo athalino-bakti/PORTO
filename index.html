@@ -340,70 +340,476 @@
     });
     </script>
 
-    <section class="py-20 px-10" id="projects">
+    <section class="py-20 px-10 bg-gray-200" id="projects">
         <div class="text-center mb-12 fade-in">
             <h2 class="text-4xl text-gray-900 mb-4">Featured Projects</h2>
             <p class="text-lg text-gray-600">Some of my recent work</p>
             <!-- Filter Buttons -->
             <div class="flex justify-center gap-4 mt-6 mb-8">
-                <button class="project-filter bg-indigo-600 text-white px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="dashboard">Dashboard</button>
-                <button class="project-filter bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="ecommerce">E-commerce</button>
-                <button class="project-filter bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="weather">Weather</button>
+                <button class="project-filter filter-btn bg-indigo-600 text-white px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="Data Analyst">Data Analyst</button>
+                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="ecommerce">Web Application</button>
+                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="weather">UI/UX</button>
+                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="mobile">System Analyst</button>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-list">
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:translate-y-[-10px] fade-in" data-skill="dashboard">
-                <div class="h-52 overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fee7a5f4-2911-4fc1-b766-bf0cf9111ef6.png" alt="Dashboard interface with analytics charts and data visualization" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
-                    <p class="text-gray-600 mb-4 text-base">A responsive dashboard displaying key metrics with interactive charts and real-time data visualization.</p>
-                    <div class="flex items-center">
-                        <a href="#" class="text-indigo-600 mr-4 no-underline font-medium flex items-center">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> <span class="ml-1">Code</span>
-                        </a>
-                        <a href="#" class="text-indigo-600 no-underline font-medium flex items-center">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> <span class="ml-1">Live</span>
-                        </a>
-                    </div>
+            <!-- Data Analyst Real Projects (4) -->
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="Data Analyst">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?sales" 
+                 alt="Sales Data Insights" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Sales Data Insights</h3>
+                <p class="text-gray-600 mb-4 text-base">An in-depth analysis platform highlighting sales trends, customer segmentation, and revenue forecasts for retail businesses.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/sales-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/sales-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
                 </div>
             </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:translate-y-[-10px] fade-in delay-1" data-skill="ecommerce" style="display:none;"></div>
-                <div class="h-52 overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba646e2a-c881-4d1c-a3ae-f2b999971784.png" alt="E-commerce product page displaying several fashion fashion items in a grid layout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">E-commerce Site</h3>
-                    <p class="text-gray-600 mb-4 text-base">Full-featured online store with product catalog, cart functionality and secure checkout process.</p>
-                    <div class="flex items-center">
-                        <a href="#" class="text-indigo-600 mr-4 no-underline font-medium flex items-center"></a>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> <span class="ml-1">Code</span>
-                        </a>
-                        <a href="#" class="text-indigo-600 no-underline font-medium flex items-center"></a>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> <span class="ml-1">Live</span>
-                        </a>
-                    </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="Data Analyst" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?customer+analysis" 
+                 alt="Customer Behavior Analysis" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Customer Behavior Analysis</h3>
+                <p class="text-gray-600 mb-4 text-base">A dashboard tool that reveals customer buying patterns and preferences to optimize marketing strategies.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/customer-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/customer-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
                 </div>
             </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:translate-y-[-10px] fade-in delay-2" data-skill="weather" style="display:none;">
-                <div class="h-52 overflow-hidden"></div>
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83c5c266-b0fe-4e7f-a5bf-5a26844fef57.png" alt="Mobile app interface with weather forecast and temperature display" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="Data Analyst" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?market+trend" 
+                 alt="Market Trend Dashboard" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Market Trend Dashboard</h3>
+                <p class="text-gray-600 mb-4 text-base">Visualizes real-time market data to help businesses understand trends and make informed decisions.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/market-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/market-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
                 </div>
-                <div class="p-6"></div>
-                    <h3 class="text-xl font-semibold mb-2">Weather App</h3>
-                    <p class="text-gray-600 mb-4 text-base">Weather forecasting application with location-based services and 5-day forecast predictions.</p>
-                    <div class="flex items-center">
-                        <a href="#" class="text-indigo-600 mr-4 no-underline font-medium flex items-center"></a>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> <span class="ml-1">Code</span>
-                        </a>
-                        <a href="#" class="text-indigo-600 no-underline font-medium flex items-center"></a>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> <span class="ml-1">Live</span>
-                        </a>
-                    </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="Data Analyst" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?finance" 
+                 alt="Financial Performance Visualizer" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Financial Performance Visualizer</h3>
+                <p class="text-gray-600 mb-4 text-base">Offers interactive graphs and reports to track company financial performance over time.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/finance-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/finance-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
                 </div>
+            </div>
+            </div>
+
+            <!-- E-commerce Real Projects (4) -->
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="ecommerce" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?ecommerce" 
+                 alt="Modern E-commerce Platform" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Modern E-commerce Platform</h3>
+                <p class="text-gray-600 mb-4 text-base">A full-featured online store with responsive design, seamless checkout, and integrated analytics.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/ecomm-platform-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/ecomm-platform-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="ecommerce" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?shopping+app" 
+                 alt="Mobile Shopping App" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Mobile Shopping App</h3>
+                <p class="text-gray-600 mb-4 text-base">A sleek mobile application designed for effortless shopping, order tracking, and customer engagement.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/mobile-app-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/mobile-app-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="ecommerce" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?inventory" 
+                 alt="Inventory Management System" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Inventory Management System</h3>
+                <p class="text-gray-600 mb-4 text-base">Streamlining warehouse operations, tracking stock levels, and automating purchase orders in real-time.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/inventory-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/inventory-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="ecommerce" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?reviews" 
+                 alt="Customer Review Portal" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Customer Review Portal</h3>
+                <p class="text-gray-600 mb-4 text-base">A platform for authentic feedback and ratings, enhancing customer trust and service improvements.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/review-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/review-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Weather Real Projects (4) -->
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="weather" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?weather" 
+                 alt="Smart Weather Monitor" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Smart Weather Monitor</h3>
+                <p class="text-gray-600 mb-4 text-base">A real-time weather tracking system with alerts and detailed forecasts using geolocation data.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/weather-monitor-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/weather-monitor-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="weather" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?climate+forecast" 
+                 alt="Climate Forecast System" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Climate Forecast System</h3>
+                <p class="text-gray-600 mb-4 text-base">Leverages historical data and AI-powered models to deliver accurate climate predictions.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/climate-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/climate-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="weather" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?weather+dashboard" 
+                 alt="Weather Intelligence Dashboard" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Weather Intelligence Dashboard</h3>
+                <p class="text-gray-600 mb-4 text-base">Combines satellite data and local sensors to offer an interactive weather insights platform.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/weather-dashboard-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/weather-dashboard-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="weather" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?environment+alert" 
+                 alt="Environmental Alert App" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Environmental Alert App</h3>
+                <p class="text-gray-600 mb-4 text-base">Delivers timely notifications on severe weather changes and environmental hazards directly to users’ devices.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/alert-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/alert-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+
+            <!-- System Analyst Real Projects (4) -->
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="mobile" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?enterprise" 
+                 alt="Enterprise Resource Manager" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Enterprise Resource Manager</h3>
+                <p class="text-gray-600 mb-4 text-base">An integrated system to streamline resource allocation, project management, and team collaboration for large enterprises.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/erm-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/erm-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="mobile" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?it+infrastructure" 
+                 alt="IT Infrastructure Optimizer" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">IT Infrastructure Optimizer</h3>
+                <p class="text-gray-600 mb-4 text-base">A robust tool designed to analyze and improve IT system performance and resource utilization.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/ito-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/ito-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="mobile" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?system+integration" 
+                 alt="System Integration Suite" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">System Integration Suite</h3>
+                <p class="text-gray-600 mb-4 text-base">Facilitates seamless integration between disparate systems ensuring efficient data exchange and process automation.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/integration-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/integration-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="mobile" style="display:none;">
+            <div class="h-52 overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?workflow+automation" 
+                 alt="Digital Workflow Automation" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Digital Workflow Automation</h3>
+                <p class="text-gray-600 mb-4 text-base">Automates routine business operations and integrates processes to enhance overall productivity and efficiency.</p>
+                <div class="flex items-center space-x-4">
+                <a href="https://example.com/workflow-code" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
+                    <path d="M15 6l6 6-6 6"></path>
+                    </svg>
+                    <span class="ml-1">Code</span>
+                </a>
+                <a href="https://example.com/workflow-live" class="text-indigo-600 no-underline font-medium flex items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3, 21 3, 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span class="ml-1">Live</span>
+                </a>
+                </div>
+            </div>
             </div>
         </div>
+    </section>
         <script>
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.project-filter');
@@ -479,8 +885,8 @@
     </section>
 
     <footer class="bg-gray-900 text-white text-center py-8 px-10 fade-in delay-2">
-        <p class="mb-4">&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-        <p class="text-sm">Built with ❤️ in Jakarta</p>
+        <p class="mb-4">&copy; <span id="year"></span> Naufal Athalino Bakti. All rights reserved.</p>
+        <p class="text-sm">Built with relentless passion, bold dreams, and that daring spirit of youth.</p>
     </footer>
 
     <script src="script.js"></script>

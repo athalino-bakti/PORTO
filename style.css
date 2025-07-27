@@ -84,3 +84,16 @@ nav ul.active {
     margin: 1rem 0; /* Menimpa margin-left untuk tampilan mobile */
   }
 }
+
+/* Tambahan agar ul dan li tidak overflow di mobile */
+@media (max-width: 640px) {
+  #experience-slider .flex-grow ul {
+    font-size: 0.95rem;
+    padding-left: 1rem;
+    text-align: left;
+    word-break: break-word;
+  }
+  #experience-slider .flex-grow {
+    text-align: center;
+  }
+}
