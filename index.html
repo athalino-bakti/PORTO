@@ -1,894 +1,733 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athalino Bakti | 2025</title>
-    <link rel="stylesheet" href="./tailwind.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#08090A',
+                        surface: '#121417',
+                        primary: '#5E6AD2',
+                        secondary: '#8A8F98',
+                        border: 'rgba(255, 255, 255, 0.08)'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-white text-gray-900 leading-relaxed overflow-x-hidden">
-    <header class="fixed top-0 left-0 w-full py-6 px-10 flex justify-between items-center bg-white bg-opacity-95 z-50 shadow-md">
-        <a href="#" class="text-2xl font-bold text-gray-900 no-underline">Athalino<span class="text-indigo-600">Works</span></a>
-        <nav>
-            <ul id="nav-menu" class="hidden md:flex list-none">
-                <li><a href="#home" class="text-gray-900 no-underline font-medium relative hover:text-indigo-600 transition-colors duration-300">Home</a></li>
-                <li><a href="#skills" class="ml-8 text-gray-900 no-underline font-medium relative hover:text-indigo-600 transition-colors duration-300">Skills</a></li>
-                <li><a href="#experience" class="ml-8 text-gray-900 no-underline font-medium relative hover:text-indigo-600 transition-colors duration-300">Experience</a></li>
-                <li><a href="#projects" class="ml-8 text-gray-900 no-underline font-medium relative hover:text-indigo-600 transition-colors duration-300">Projects</a></li>
-                <li><a href="#contact" class="ml-8 text-gray-900 no-underline font-medium relative hover:text-indigo-600 transition-colors duration-300">Contact</a></li>
-            </ul>
-            <div class="md:hidden cursor-pointer" id="hamburger">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<body class="bg-background text-gray-200 antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full glass-header z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold tracking-tight text-white hover:text-gray-300 transition-colors">
+                Athalino<span class="text-primary">.Works</span>
+            </a>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-sm font-medium text-secondary">
+                    <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
+                    <li><a href="#experience" class="hover:text-white transition-colors">Experience</a></li>
+                    <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="md:hidden text-gray-400 hover:text-white focus:outline-none" id="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
-            </div>
-        </nav>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-border" id="mobile-menu">
+            <ul class="flex flex-col p-6 space-y-4 text-center text-sm font-medium text-secondary">
+                <li><a href="#home" class="block py-2 hover:text-white transition-colors">Home</a></li>
+                <li><a href="#skills" class="block py-2 hover:text-white transition-colors">Skills</a></li>
+                <li><a href="#experience" class="block py-2 hover:text-white transition-colors">Experience</a></li>
+                <li><a href="#projects" class="block py-2 hover:text-white transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <section class="min-h-screen flex items-center px-10 pt-16" id="home">
-        <div class="w-full md:w-3/5 md:pr-8 text-center md:text-left">
-            <h1 class="text-5xl md:text-6xl mb-4 text-gray-900 fade-in">Hi, I'm <span class="text-indigo-600">Athalino Bakti</span></h1>
-            <h2 class="text-xl md:text-2xl font-normal mb-6 text-gray-600 fade-in delay-1">I turn ideas into organized, impactful digital solutions</h2>
-            <p class="text-lg mb-8 text-gray-600 fade-in delay-2">I lead and organize digital projects with structured planning, clear communication, and user-focused solutions. Passionate about teamwork, execution, and making things happen.</p>
-            <a href="#projects" class="inline-block bg-indigo-600 text-white py-3 px-6 rounded-full no-underline font-medium transition-all duration-300 border-2 border-indigo-600 hover:bg-transparent hover:text-indigo-600 fade-in delay-3">View My Work</a>
-        </div>
-        <div class="w-full md:w-2/5 flex justify-center mt-8 md:mt-0 fade-in delay-1">
-            <div class="relative flex items-center justify-center" style="width: 20rem; height: 20rem;">
-                <div class="absolute inset-0 rounded-full border-4 border-gray-200 shadow-xl"></div>
-                <img src="images/personal_photo.jpg" alt="Smiling developer wearing business casual attire sits in front of a modern office background with soft natural lighting creating a welcoming and professional atmosphere"
-                    class="rounded-full w-full h-full object-cover object-center border-4 border-white shadow-xl" style="aspect-ratio: 1 / 1;" />
-            </div>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex flex-col justify-center items-center pt-24 px-6 overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-grid-pattern -z-20 opacity-30"></div>
 
-    <section class="py-20 px-10 bg-gray-100" id="skills">
-        <div class="text-center mb-12 fade-in">
-            <h2 class="text-4xl text-gray-900 mb-4">My Skills</h2>
-            <p class="text-lg text-gray-600">Technologies and tools I'm proficient with</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Programming Languages -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center fade-in">
-            <h3 class="text-lg font-semibold mb-4">Programming</h3>
-            <div class="flex justify-center gap-4 mb-2 flex-wrap">
-                <!-- Python -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10" title="Python"/>
-                <!-- JavaScript -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10" title="JavaScript"/>
-                <!-- PHP -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="w-10 h-10" title="PHP"/>
-                <!-- Java -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-10 h-10" title="Java"/>
-                <!-- HTML -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-10 h-10" title="HTML"/>
-                <!-- CSS -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-10 h-10" title="CSS"/>
-                <!-- MySQL -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10" title="MySQL"/>
-            </div>
-            <p class="text-gray-600">Python, JavaScript, PHP, Java, HTML, CSS, MySQL</p>
-            </div>
-            <!-- Frameworks & Tools -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center fade-in delay-1">
-            <h3 class="text-lg font-semibold mb-4">Frameworks & Tools</h3>
-            <div class="flex justify-center gap-4 mb-2 flex-wrap">
-                <!-- Laravel -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="w-10 h-10" title="Laravel"/>
-                <!-- JIRA -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="JIRA" class="w-10 h-10" title="JIRA"/>
-                <!-- Azure -->
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="w-10 h-10" title="Azure"/>
-                <!-- SAP -->
-                <!-- SAP -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png" alt="SAP" class="w-10 h-10 bg-white rounded" title="SAP Fundamentals"/>
-                <!-- Visual Paradigm -->
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-xUOcz7ZwG_rKd-FeuD1gwcl8Fmn4B0e0SQ&s" alt="Visual Paradigm" class="w-10 h-10 bg-white rounded" title="Visual Paradigm"/>
-                <!-- Cisco NetAcad -->
-                <img src="https://img.icons8.com/color/48/000000/cisco-anyconnect.png" alt="Cisco NetAcad" class="w-10 h-10" title="Cisco NetAcad"/>
-                <!-- VMware -->
-                <img src="https://img.icons8.com/color/48/000000/vmware.png" alt="VMware" class="w-10 h-10" title="VMware"/>
-            </div>
-            <p class="text-gray-600">Laravel, JIRA, Azure, SAP Fundamentals, Visual Paradigm, Cisco NetAcad, VMware</p>
-            </div>
-            <!-- Methodologies -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center fade-in delay-2">
-            <h3 class="text-lg font-semibold mb-4">Methodologies</h3>
-            <div class="flex justify-center gap-4 mb-2 flex-wrap">
-                <!-- SDLC -->
-                <img src="https://img.icons8.com/color/48/000000/process.png" alt="SDLC" class="w-10 h-10" title="SDLC"/>
-                <!-- BPMN -->
-                <img src="https://img.icons8.com/color/48/000000/flow-chart.png" alt="BPMN" class="w-10 h-10" title="BPMN"/>
-                <!-- Visual Management -->
-                <img src="https://img.icons8.com/color/48/000000/visual-studio.png" alt="Visual Management" class="w-10 h-10" title="Visual Management"/>
-                <!-- Requirement Analysis -->
-                <img src="https://img.icons8.com/color/48/000000/task.png" alt="Requirement Analysis" class="w-10 h-10" title="Requirement Analysis"/>
-            </div>
-            <p class="text-gray-600">SDLC, BPMN, Visual Management, Requirement Analysis</p>
-            </div>
-            <!-- Other -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center fade-in delay-3 md:col-span-1 lg:col-start-2">
-                <h3 class="text-lg font-semibold mb-4">Other</h3>
-                <div class="flex justify-center gap-4 mb-2 flex-wrap">
-                    <!-- Data Analyst -->
-                    <img src="https://img.icons8.com/color/48/000000/combo-chart--v1.png" alt="Data Analyst" class="w-10 h-10" title="Data Analyst"/>
-                    <!-- System Analyst -->
-                    <img src="https://img.icons8.com/color/48/000000/system-task.png" alt="System Analyst" class="w-10 h-10" title="System Analyst"/>
-                    <!-- Knowledge Management -->
-                    <img src="https://img.icons8.com/color/48/000000/knowledge-sharing.png" alt="Knowledge Management" class="w-10 h-10" title="Knowledge Management"/>
-                </div>
-                <p class="text-gray-600">Data Analyst, System Analyst, Knowledge Management</p>
-            </div>
-        </div>
-        </section>
-
-    <section class="py-24 px-4 bg-white" id="experience">
-        <div class="text-center mb-12 fade-in">
-            <h2 class="text-4xl text-gray-900 mb-4">Experience</h2>
-            <p class="text-lg text-gray-600">My work experiences</p>
-        </div>
-        <div class="relative max-w-7xl mx-auto">
-            <!-- Slider Container -->
-            <div id="experience-slider" class="flex transition-transform duration-500 ease-in-out overflow-x-auto snap-x snap-mandatory px-2">
-            <!-- Slide 1 -->
-            <div class="flex flex-col md:flex-row gap-8 min-w-full snap-center">
-                <!-- Card 1 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/PSI.jpg" alt="Foto Pengalaman Kerja di SAG Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">PSI Practicum Assistant</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>SAG Laboratory</strong><br>
-                    Juni 2024 - Desember 2024
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Taught over 400+ students per semester in hands-on sessions using Microsoft Word, Excel, and Canva</li>
-                    <li>Helped increase average student grades by 15–20% through interactive and practical guidance</li>
-                    <li>Conducted 30+ practicum sessions focusing on real-world document creation, data analysis, and visual design</li>
-                    <li>Provided 1-on-1 support to more than 50 students, ensuring personalized assistance and improved comprehension</li>
-                    <li>Developed and delivered 3 customized teaching modules tailored for academic and professional use cases</li>
-                    <li>Improved student engagement and participation rates by 25% through dynamic teaching methods</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-1">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/DASPRO.png" alt="Foto Pengalaman Kerja di DASPRO Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Database System Practicum Assistant</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>DASPRO Laboratory</strong><br>
-                    Februari 2025 - Mei 2025
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Assisted over 400+ students per semester in understanding core database concepts such as SQL, ERD, normalization, and data manipulation</li>
-                    <li>Supported the delivery of 25+ hands-on practicum sessions using tools like MySQL and phpMyAdmin</li>
-                    <li>Improved students' practical database implementation scores by 18–22% on average through personalized feedback and mentoring</li>
-                    <li>Provided individual consultations to more than 40 students struggling with database logic and queries</li>
-                    <li>Created 3+ interactive learning materials to enhance student engagement and retention of database concepts</li>
-                    <li>Achieved over 90% student satisfaction rate in end-of-semester practicum feedback surveys</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-2">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/EDM.png" alt="EDM Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Study Group Member</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>EDM Laboratory</strong><br>
-                    December 2024 - Ongoing
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Gained hands-on experience with 5+ data tools, including Python (Pandas), Excel, Tableau, and Google Data Studio</li>
-                    <li>Improved data analysis and visualization skills by 40%, based on self-assessment and project outcomes</li>
-                    <li>Attended over 25 study sessions, focusing on data processing, analytics, and visualization</li>
-                    <li>Collaborated with 15+ peers on solving case studies and presenting insights from data</li>
-                    <li>Contributed to the creation of 3+ interactive dashboards and visual storytelling projects</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-3">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/EISD.png" alt="EISD Laboratory" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Study Group Member</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>EISD Laboratory</strong><br>
-                    May 2025 - Ongoing
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Processed and entered large volumes of data with 99.5% accuracy rate</li>
-                    <li>Worked with multiple data formats including Excel, Google Sheets, and database systems</li>
-                    <li>Maintained data integrity and performed quality checks on entered information</li>
-                    <li>Met strict deadlines while handling confidential and sensitive data</li>
-                    <li>Developed efficient data entry workflows that improved processing speed by 30%</li>
-                    <li>Collaborated with clients to understand specific data requirements and formatting needs</li>
-                    </ul>
-                </div>
+        <div class="text-center max-w-4xl mx-auto z-10 fade-in">
+            <div class="mb-6 relative inline-block">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-b from-white/20 to-transparent mx-auto">
+                    <img src="images/personal_photo.jpg" alt="Athalino Bakti" class="w-full h-full rounded-full object-cover border-2 border-background shadow-2xl">
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="flex flex-col md:flex-row gap-8 min-w-full snap-center">
-                <!-- Card 5 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-4">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/GDGOC.png" alt="Google Developer Group On Campus" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Study Group Member</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>Google Developer Group On Campus TelU</strong><br>
-                    December 2024 - May 2025
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Completed 30+ hours of structured training in HTML, CSS, JavaScript, and modern frameworks</li>
-                    <li>Participated in weekly peer code reviews, resulting in 20% faster debugging cycles</li>
-                    <li>Collaborated in 5 team-based coding challenges to improve project delivery and teamwork</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-5">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/acarawr.jpg" alt="Market day 2025" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Event Division</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>Marketday TelU 2025</strong><br>
-                    Apr 2025 - May 2025
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Coordinated over 5 scheduled performances and activities throughout the event</li>
-                    <li>Managed logistics and technical setup for 148 student business booths involving 1,500+ participants</li>
-                    <li>Communicated with 30+ vendors and stakeholders to ensure smooth execution</li>
-                    <li>Resolved 10+ on-site technical and coordination issues in real-time, maintaining event flow</li>
-                    <li>Contributed to achieving a 95% event satisfaction rate based on post-event feedback</li>
-                    <li>Helped execute an event with zero major disruptions</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 7 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-6">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/UCREW.png" alt="Microsoft Ucrew" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Public Relations Staff</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>Microsoft University Crew Telkom University</strong><br>
-                    Oct 2023 - Dec 2023
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Served as Master of Ceremony in 2 Microsoft campus events with 200+ participants</li>
-                    <li>Created 10+ copywriting content pieces and social media captions for @ucrewtelkom</li>
-                    <li>Supported digital literacy awareness campaigns and contributed to student engagement growth by 30% during campaign weeks</li>
-                    </ul>
-                </div>
-                </div>
-                <!-- Card 8 -->
-                <div class="flex-1 min-w-0 bg-gray-100 rounded-xl p-8 shadow-lg fade-in delay-7">
-                <div class="w-full flex items-center justify-center mb-4" style="height: 11rem;">
-                    <img src="images/Messengger.JPG" alt="Cyvero" class="object-cover rounded-lg w-[16rem] h-[11rem]" />
-                </div>
-                <div class="flex-grow text-center">
-                    <h3 class="text-xl font-semibold mb-1 text-gray-900 mt-4">Coordinator of Messenger Division</h3>
-                    <p class="text-gray-700 font-bold mb-1 text-base">
-                    <strong>Cyvero</strong><br>
-                    Jan 2024 - Mar 2024
-                    </p>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm mt-2 text-left">
-                    <li>Led a team of 8 to manage internal and external communications for Cyvero events</li>
-                    <li>Coordinated message delivery and ensured timely updates to 100+ participants</li>
-                    <li>Developed communication strategies that improved event information flow by 35%</li>
-                    <li>Handled crisis communication and resolved 5+ urgent issues during event execution</li>
-                    <li>Created and distributed 10+ official announcements and newsletters</li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            <p class="text-gray-700 font-bold mb-1 text-base">
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gradient pb-2">
+                Turning ideas into<br>impactful solutions.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-secondary mb-10 max-w-2xl mx-auto leading-relaxed delay-1 fade-in">
+                Hi, I'm <span class="text-white font-medium">Athalino Bakti</span>. I lead and organize digital projects with structured planning and user-focused execution.
             </p>
-            </div>
-        </div>
-            <!-- Slider Controls -->
-            <div class="flex justify-center mt-8 space-x-6">
-                <button id="exp-prev" aria-label="Previous" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-800 transition">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button id="exp-next" aria-label="Next" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-800 transition">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-                </button>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center delay-2 fade-in">
+                <a href="#projects" class="px-8 py-3 rounded-full text-white font-medium text-sm btn-primary-linear w-full sm:w-auto">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-full text-secondary hover:text-white font-medium text-sm btn-linear w-full sm:w-auto">
+                    Contact Me
+                </a>
             </div>
         </div>
     </section>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const slider = document.getElementById('experience-slider');
-        const prevBtn = document.getElementById('exp-prev');
-        const nextBtn = document.getElementById('exp-next');
-        const slides = slider.querySelectorAll('.min-w-full');
-        let currentIndex = 0;
 
-        function scrollToSlide(index) {
-            const slide = slides[index];
-            if (slide) {
-                slider.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
-            }
-        }
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl font-semibold text-white mb-4">My Skills</h2>
+            <p class="text-secondary text-sm">Technologies and tools I'm proficient with</p>
+        </div>
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = Math.max(0, currentIndex - 1);
-            scrollToSlide(currentIndex);
-        });
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Skills -->
+            <div class="card-linear rounded-2xl p-8 fade-in h-full">
+                <h3 class="text-lg font-medium text-white mb-6 border-b border-border pb-4">Skills</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                   <!-- Programming Languages -->
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-8 h-8 mb-2" title="HTML5">
+                        <span class="text-xs text-secondary">HTML5</span>
+                   </div>
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-8 h-8 mb-2" title="CSS3">
+                        <span class="text-xs text-secondary">CSS3</span>
+                   </div>
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8 mb-2" title="JavaScript (ES6+)">
+                        <span class="text-xs text-secondary">JavaScript</span>
+                   </div>
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8 mb-2" title="PHP">
+                        <span class="text-xs text-secondary">PHP</span>
+                   </div>
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8 mb-2" title="MySQL">
+                        <span class="text-xs text-secondary">MySQL</span>
+                   </div>
+                   <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-8 h-8 mb-2" title="PostgreSQL">
+                        <span class="text-xs text-secondary">PostgreSQL</span>
+                   </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-white text-sm font-medium mb-3">Concepts & Analysis</h4>
+                        <div class="flex flex-wrap gap-2">
+                             <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">RESTful API</span>
+                             <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">GraphQL</span>
+                             <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">JWT Authentication</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm font-medium mb-3">Management & Audit</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Project Management</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">System Analyst</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Data Analyst</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Requirement Analysis</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">System Design</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">SDLC</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">IT Audit</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Software Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = Math.min(slides.length - 1, currentIndex + 1);
-            scrollToSlide(currentIndex);
-        });
-    });
-    </script>
+            <!-- Tools -->
+            <div class="card-linear rounded-2xl p-8 fade-in h-full delay-1">
+                <h3 class="text-lg font-medium text-white mb-6 border-b border-border pb-4">Tools</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                    <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-8 h-8 mb-2" title="React.js">
+                        <span class="text-xs text-secondary">React.js</span>
+                    </div>
+                     <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-8 h-8 mb-2" title="Tailwind CSS">
+                        <span class="text-xs text-secondary">Tailwind CSS</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-8 h-8 mb-2" title="Node.js">
+                        <span class="text-xs text-secondary">Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-8 h-8 mb-2" title="Express.js">
+                        <span class="text-xs text-secondary">Express.js</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-8 h-8 mb-2" title="Laravel">
+                        <span class="text-xs text-secondary">Laravel</span>
+                    </div>
+                     <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-8 h-8 mb-2" title="Docker">
+                        <span class="text-xs text-secondary">Docker</span>
+                    </div>
+                </div>
 
-    <section class="py-20 px-10 bg-gray-200" id="projects">
-        <div class="text-center mb-12 fade-in">
-            <h2 class="text-4xl text-gray-900 mb-4">Featured Projects</h2>
-            <p class="text-lg text-gray-600">Some of my recent work</p>
-            <!-- Filter Buttons -->
-            <div class="flex justify-center gap-4 mt-6 mb-8">
-                <button class="project-filter filter-btn bg-indigo-600 text-white px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="Data Analyst">Data Analyst</button>
-                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="ecommerce">Web Application</button>
-                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="weather">UI/UX</button>
-                <button class="project-filter filter-btn bg-gray-200 text-gray-900 px-4 py-2 rounded-full font-medium transition hover:bg-indigo-600 hover:text-white" data-skill="mobile">System Analyst</button>
+                <div class="space-y-4">
+                     <div>
+                        <h4 class="text-white text-sm font-medium mb-3">Workflow & Deployment</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Git</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">GitHub</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">VS Code</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Postman</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Vercel</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Netlify</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm font-medium mb-3">Design & Management Tools</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">JIRA</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Azure AI (AI-900)</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">Visual Paradigm</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">SAP</span>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-secondary">BPMN Tools</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Experience Section (Masonry/Grid) -->
+    <section id="experience" class="py-24 px-6 bg-surface/50 border-y border-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-semibold text-white mb-4">Experience</h2>
+                <p class="text-secondary text-sm">My professional journey.</p>
+            </div>
+
+            <!-- Work Experiences -->
+            <div class="mb-16">
+                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4 fade-in">Work Experiences</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1: OJK -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images\OJK.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="OJK">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Data Analyst Intern</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Otoritas Jasa Keuangan (OJK) • Aug 2025 - Sep 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Processed, cleaned, and validated 60,000+ financial records (95%+ accuracy).</li>
+                                <li>Automated data workflows using Python/Excel, reducing manual time by 40%.</li>
+                                <li>Developed scripts for reporting delays, enhancing compliance monitoring.</li>
+                                <li>Integrated SIPO & SiPEDULI datasets with 87% similarity accuracy.</li>
+                                <li>Generated 20+ standardized regulatory reports for insurance supervision.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: EAD Laboratory -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-1 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images\APSI.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="EAD Lab">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Information Systems Analysis and Design Practicum Assistant</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">EAD Laboratory • Sep 2025 - Dec 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Guided students in UML/BPMN diagrams (Use Case, Activity, Deployment).</li>
+                                <li>Facilitated understanding of functional/non-functional requirements & architecture.</li>
+                                <li>Supported integration of analysis into aligned system designs.</li>
+                                <li>Collaborated to assess deliverables ensuring methodological accuracy.</li>
+                                <li>Bridged theoretical concepts with practical system design.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: DASPRO -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-2 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images/DASPRO.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="DASPRO">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Database System Asst.</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">DASPRO Laboratory • Feb 2025 - May 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Assisted 4000+ students with SQL, ERD, normalization.</li>
+                                <li>Supported 25+ hands-on sessions (MySQL, phpMyAdmin).</li>
+                                <li>Improved implementation scores by 18–22%.</li>
+                                <li>Consulted 40+ students on logic/queries.</li>
+                                <li>Created 3+ interactive learning materials.</li>
+                                <li>Achieved 90% student satisfaction.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Market Day Event -->
+                     <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images/acarawr.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Event">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Event Division</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Marketday TelU 2025 • Apr 2025 - May 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Coordinated 5+ scheduled performances.</li>
+                                <li>Managed logistics for 148 booths, 1,500+ participants.</li>
+                                <li>Communicated with 30+ vendors/stakeholders.</li>
+                                <li>Resolved 10+ on-site technical issues.</li>
+                                <li>Achieved 95% satisfaction; zero major disruptions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: PSI (SAG) -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images/PSI.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="PSI">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">PSI Practicum Assistant</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">SAG Laboratory • Aug 2024 - Oct 2024</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Taught 400+ students (Word, Excel, Canva).</li>
+                                <li>Increased average grades by 15–20% via interactive guidance.</li>
+                                <li>Conducted 30+ practicums on real-world docs & analysis.</li>
+                                <li>Provided 1-on-1 support to 50+ students.</li>
+                                <li>Developed 3 customized teaching modules.</li>
+                                <li>Improved engagement by 25% with dynamic methods.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Organizational Experiences -->
+            <div>
+                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4 fade-in">Organizational Experiences</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Card 1: Genesis HMSI -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images\PRC P.jpeg" class="w-full h-full object-cover object-[center_25%] transition-transform duration-500 group-hover:scale-105" alt="Genesis">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Coordinator of PRC Division</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Genesis HMSI • May 2025 - Dec 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Led a 5-person content team producing 15+ social posts.</li>
+                                <li>Secured 2+ event speakers.</li>
+                                <li>Maintained branding; increased online reach by 40%.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: JBC -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-1 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images\JBC.jpeg" class="w-full h-full object-cover object-[center_75%] transition-transform duration-500 group-hover:scale-105" alt="JBC">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Media & PR Staff</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Java Business Competition • Apr 2025 - Oct 2025</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Created/scheduled 30+ Instagram contents & promos.</li>
+                                <li>Collaborated with 20+ media partners.</li>
+                                <li>Supported audience engagement via daily interactive content.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cyvero -->
+                   <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-2 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images/Messengger.JPG" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Cyvero">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Coordinator of Messenger Div</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Cyvero HMSI • Jun 2024 - Dec 2024</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Coordinated media partnerships with 20+ external organizations.</li>
+                                <li>Arranged guest stars & finalized communication logistics.</li>
+                                <li>Designed/scheduled 20+ posts & broadcasts to 900+ followers.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: PKKMB -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images\PKKMB.jpeg" class="w-full h-full object-cover object-[center_80%] transition-transform duration-500 group-hover:scale-105" alt="PKKMB">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Liaison Officer</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">PKKMB Telkom University • Jun 2024 - Sep 2024</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Mentored 40+ freshmen in assigned cluster.</li>
+                                <li>Coordinated logistics/announcements for 5 event days.</li>
+                                <li>Provided real-time guidance & problem resolution.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Microsoft -->
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-4 h-full flex flex-col">
+                        <div class="w-full h-48 overflow-hidden relative border-b border-border">
+                            <img src="images/UCREW.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Microsoft">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-semibold text-white mb-1">Public Relations Staff</h3>
+                            <div class="text-primary text-xs font-medium uppercase tracking-wide mb-4">Microsoft University Crew • Oct 2023 - Dec 2023</div>
+                            <ul class="text-secondary text-sm leading-relaxed list-disc pl-4 space-y-2 flex-1">
+                                <li>Served as MC in 2 Microsoft campus events (200+ participants).</li>
+                                <li>Created 10+ copywriting pieces & social captions for @ucrewtelkom.</li>
+                                <li>Supported digital literacy campaigns; contributed to 30% engagement growth.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-in">
+            <div class="mb-6 md:mb-0">
+                <h2 class="text-3xl font-semibold text-white mb-2">Recent Projects</h2>
+                <p class="text-secondary text-sm">Selected works and case studies.</p>
+            </div>
+            
+            <div class="flex gap-2 flex-wrap">
+                <button class="project-filter px-4 py-1.5 rounded-full text-xs font-medium bg-white text-black transition-all" data-skill="all">All</button>
+                <button class="project-filter px-4 py-1.5 rounded-full text-xs font-medium bg-white/5 text-secondary hover:text-white hover:bg-white/10 transition-all" data-skill="Data Analyst">Data Analyst</button>
+                <button class="project-filter px-4 py-1.5 rounded-full text-xs font-medium bg-white/5 text-secondary hover:text-white hover:bg-white/10 transition-all" data-skill="Web Application">Web Application</button>
+                 <button class="project-filter px-4 py-1.5 rounded-full text-xs font-medium bg-white/5 text-secondary hover:text-white hover:bg-white/10 transition-all" data-skill="UI UX">UI UX</button>
+                 <button class="project-filter px-4 py-1.5 rounded-full text-xs font-medium bg-white/5 text-secondary hover:text-white hover:bg-white/10 transition-all" data-skill="System Analyst">System Analyst</button>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-list">
-            <!-- Data Analyst Real Projects (4) -->
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="Data Analyst">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?sales" 
-                 alt="Sales Data Insights" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Sales Data Insights</h3>
-                <p class="text-gray-600 mb-4 text-base">An in-depth analysis platform highlighting sales trends, customer segmentation, and revenue forecasts for retail businesses.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/sales-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/sales-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- DATA ANALYST PROJECTS -->
+            <!-- 1. Retail Dashboard (Existing) -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="images\project-dashboard.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Retail Dashboard">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Retail Performance Dashboard</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Interactive dashboard visualizing sales performance, customer churn, and regional trends using Power BI.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="Data Analyst" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?customer+analysis" 
-                 alt="Customer Behavior Analysis" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Customer Behavior Analysis</h3>
-                <p class="text-gray-600 mb-4 text-base">A dashboard tool that reveals customer buying patterns and preferences to optimize marketing strategies.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/customer-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/customer-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 2. Customer Churn Model -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="images\project-churn.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Churn Prediction">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Customer Churn Predictor</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Machine learning model to identify at-risk customers and suggest retention strategies.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="Data Analyst" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?market+trend" 
-                 alt="Market Trend Dashboard" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Market Trend Dashboard</h3>
-                <p class="text-gray-600 mb-4 text-base">Visualizes real-time market data to help businesses understand trends and make informed decisions.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/market-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/market-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 3. Supply Chain Analytics -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="images\project-supply-chain.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Supply Chain">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Global Supply Chain Optimizer</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Real-time logistics tracking and route optimization using Python and GeoPandas.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="Data Analyst" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?finance" 
-                 alt="Financial Performance Visualizer" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Financial Performance Visualizer</h3>
-                <p class="text-gray-600 mb-4 text-base">Offers interactive graphs and reports to track company financial performance over time.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/finance-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/finance-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 4. Sentiment Analysis -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="images\project-sentiment.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Sentiment Analysis">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Social Sentiment Engine</h3>
+                    <p class="text-secondary text-sm line-clamp-2">NLP-based tool analyzing brand sentiment across social media platforms in real-time.</p>
                 </div>
             </div>
+            <!-- 5. Healthcare Resource -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="images\project-healthcare.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Healthcare Analytics">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">MediResource Allocator</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Predictive analytics for optimizing hospital bed occupancy and staff scheduling.</p>
+                </div>
             </div>
 
-            <!-- E-commerce Real Projects (4) -->
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="ecommerce" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?ecommerce" 
-                 alt="Modern E-commerce Platform" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Modern E-commerce Platform</h3>
-                <p class="text-gray-600 mb-4 text-base">A full-featured online store with responsive design, seamless checkout, and integrated analytics.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/ecomm-platform-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/ecomm-platform-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- WEB APPLICATION PROJECTS -->
+            <!-- 1. TaskMaster (Existing) -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-taskmaster.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="TaskMaster">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">TaskMaster SaaS</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Collaborative project management tool featuring real-time updates and team workspace integration.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="ecommerce" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?shopping+app" 
-                 alt="Mobile Shopping App" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Mobile Shopping App</h3>
-                <p class="text-gray-600 mb-4 text-base">A sleek mobile application designed for effortless shopping, order tracking, and customer engagement.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/mobile-app-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/mobile-app-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 2. LuxeLiving Real Estate -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-real-estate.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Real Estate">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">LuxeLiving Platform</h3>
+                    <p class="text-secondary text-sm line-clamp-2">High-end real estate listing platform with virtual tours and agent appointment scheduling.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="ecommerce" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?inventory" 
-                 alt="Inventory Management System" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Inventory Management System</h3>
-                <p class="text-gray-600 mb-4 text-base">Streamlining warehouse operations, tracking stock levels, and automating purchase orders in real-time.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/inventory-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/inventory-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 3. CryptoPulse -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-crypto.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Crypto Trading">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">CryptoPulse Trader</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Real-time cryptocurrency trading interface with live charts and portfolio tracking.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="ecommerce" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?reviews" 
-                 alt="Customer Review Portal" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Customer Review Portal</h3>
-                <p class="text-gray-600 mb-4 text-base">A platform for authentic feedback and ratings, enhancing customer trust and service improvements.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/review-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/review-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 4. FlavorHaven -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-recipe.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Recipe Social">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">FlavorHaven Network</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Social platform for foodies to share recipes, meal plans, and cooking tips.</p>
                 </div>
             </div>
+            <!-- 5. Streamify -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-streaming.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Streaming App">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Streamify Hub</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Video streaming service with adaptive bitrate playback and personalized recommendation engine.</p>
+                </div>
             </div>
 
-            <!-- Weather Real Projects (4) -->
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="weather" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?weather" 
-                 alt="Smart Weather Monitor" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Smart Weather Monitor</h3>
-                <p class="text-gray-600 mb-4 text-base">A real-time weather tracking system with alerts and detailed forecasts using geolocation data.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/weather-monitor-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/weather-monitor-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- UI UX PROJECTS -->
+            <!-- 1. FinFlow (Existing) -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-finflow.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="FinFlow">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">FinFlow Mobile App</h3>
+                    <p class="text-secondary text-sm line-clamp-2">User-centered design for a personal finance application focusing on accessibility and intuitive navigation.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="weather" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?climate+forecast" 
-                 alt="Climate Forecast System" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Climate Forecast System</h3>
-                <p class="text-gray-600 mb-4 text-base">Leverages historical data and AI-powered models to deliver accurate climate predictions.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/climate-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/climate-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 2. ZenTravel -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-travel.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Travel App">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">ZenTravel Experience</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Seamless travel booking interface aimed at reducing cognitive load for complex itineraries.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="weather" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?weather+dashboard" 
-                 alt="Weather Intelligence Dashboard" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Weather Intelligence Dashboard</h3>
-                <p class="text-gray-600 mb-4 text-base">Combines satellite data and local sensors to offer an interactive weather insights platform.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/weather-dashboard-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/weather-dashboard-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 3. FitTrack -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-fitness.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Fitness Wearable">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">FitTrack Wearable UI</h3>
+                    <p class="text-secondary text-sm line-clamp-2">High-contrast interface design for smartwatches focused on outdoor visibility and quick interactions.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="weather" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?environment+alert" 
-                 alt="Environmental Alert App" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Environmental Alert App</h3>
-                <p class="text-gray-600 mb-4 text-base">Delivers timely notifications on severe weather changes and environmental hazards directly to users’ devices.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/alert-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/alert-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+            <!-- 4. EcoSmart -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-smart-home.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Smart Home">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">EcoSmart Controller</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Unified smart home dashboard design emphasizing energy consumption monitoring and automation.</p>
                 </div>
             </div>
+            <!-- 5. NeonBanking -->
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-neobank.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="NeoBank">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">NeonBanking Concept</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Futuristic banking app concept targeting Gen Z with gamified savings features and bold typography.</p>
+                </div>
             </div>
 
-            <!-- System Analyst Real Projects (4) -->
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in" data-skill="mobile" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?enterprise" 
-                 alt="Enterprise Resource Manager" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Enterprise Resource Manager</h3>
-                <p class="text-gray-600 mb-4 text-base">An integrated system to streamline resource allocation, project management, and team collaboration for large enterprises.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/erm-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/erm-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+             <!-- SYSTEM ANALYST PROJECTS -->
+             <!-- 1. Legacy Migration (Existing) -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="images\project-migration.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Legacy Migration">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Legacy Migration Blueprint</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Comprehensive system architecture and migration strategy for upgrading enterprise legacy infrastructure.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-1" data-skill="mobile" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?it+infrastructure" 
-                 alt="IT Infrastructure Optimizer" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">IT Infrastructure Optimizer</h3>
-                <p class="text-gray-600 mb-4 text-base">A robust tool designed to analyze and improve IT system performance and resource utilization.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/ito-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/ito-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+             <!-- 2. Microservices -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="https://image.pollinations.ai/prompt/microservices%20docker%20kubernetes%20cloud%20cluster%20diagram%20isometric%20purple%20neon?width=800&height=600&nologo=true&seed=101" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Microservices">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Cloud Microservices Arch</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Designing a scalable microservices architecture using Docker, Kubernetes, and AWS Lambda.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-2" data-skill="mobile" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?system+integration" 
-                 alt="System Integration Suite" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">System Integration Suite</h3>
-                <p class="text-gray-600 mb-4 text-base">Facilitates seamless integration between disparate systems ensuring efficient data exchange and process automation.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/integration-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/integration-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+             <!-- 3. ERP Integration -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="https://image.pollinations.ai/prompt/complex%20erp%20data%20flow%20diagram%20logistics%20business%20system%20blue%20tech?width=800&height=600&nologo=true&seed=202" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="ERP Integration">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">ERP Integration Flow</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Technical specification and data mapping for integrating SAP ERP with third-party logistics systems.</p>
                 </div>
             </div>
-            </div>
-            <div class="project-card rounded-lg overflow-hidden shadow-md transition-transform duration-300 bg-white hover:-translate-y-2 fade-in delay-3" data-skill="mobile" style="display:none;">
-            <div class="h-52 overflow-hidden">
-                <img src="https://source.unsplash.com/400x300/?workflow+automation" 
-                 alt="Digital Workflow Automation" 
-                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Digital Workflow Automation</h3>
-                <p class="text-gray-600 mb-4 text-base">Automates routine business operations and integrates processes to enhance overall productivity and efficiency.</p>
-                <div class="flex items-center space-x-4">
-                <a href="https://example.com/workflow-code" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3"></path>
-                    <path d="M15 6l6 6-6 6"></path>
-                    </svg>
-                    <span class="ml-1">Code</span>
-                </a>
-                <a href="https://example.com/workflow-live" class="text-indigo-600 no-underline font-medium flex items-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3, 21 3, 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    <span class="ml-1">Live</span>
-                </a>
+             <!-- 4. Cybersecurity -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="https://image.pollinations.ai/prompt/cybersecurity%20shield%20lock%20binary%20code%20protecting%20server%20network%20glowing%20red?width=800&height=600&nologo=true&seed=303" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Cybersecurity">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Network Defense Topology</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Security infrastructure design featuring DMZ, firewalls, and IDS/IPS for a financial institution.</p>
                 </div>
             </div>
+             <!-- 5. Smart City -->
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+                <div class="h-48 overflow-hidden relative">
+                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                     <img src="https://image.pollinations.ai/prompt/smart%20city%20iot%20sensors%20connected%20futuristic%20urban%20grid%20night%20view?width=800&height=600&nologo=true&seed=404" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Smart City IoT">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">Smart City IoT Grid</h3>
+                    <p class="text-secondary text-sm line-clamp-2">Architecture for a city-wide IoT sensor network managing traffic lights and waste management.</p>
+                </div>
             </div>
         </div>
     </section>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterButtons = document.querySelectorAll('.project-filter');
-            const projectCards = document.querySelectorAll('.project-card');
-            // Show only the first project by default
-            projectCards.forEach((card, idx) => {
-                card.style.display = idx === 0 ? '' : 'none';
-            });
-            filterButtons.forEach((btn, idx) => {
-                if (idx === 0) {
-                    btn.classList.add('bg-indigo-600', 'text-white');
-                } else {
-                    btn.classList.remove('bg-indigo-600', 'text-white');
-                }
-                btn.addEventListener('click', function () {
-                    const skill = this.getAttribute('data-skill');
-                    filterButtons.forEach(b => b.classList.remove('bg-indigo-600', 'text-white'));
-                    this.classList.add('bg-indigo-600', 'text-white');
-                    projectCards.forEach(card => {
-                        if (card.getAttribute('data-skill') === skill) {
-                            card.style.display = '';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 px-6 border-t border-border bg-surface/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-secondary text-sm">
+                © 2026 Athalino Bakti. All rights reserved.
+            </div>
+            <div class="flex gap-6 items-center">
+                <a href="https://www.linkedin.com/in/naufalathalinobakti/" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-white transition-colors" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 21.227.792 22 1.771 22h20.451C23.2 22 24 21.227 24 20.451V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/athalino-bakti" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-white transition-colors" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="mailto:athalino71@gmail.com" class="text-secondary hover:text-white transition-colors" aria-label="Email">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Filter Script
+        const buttons = document.querySelectorAll('.project-filter');
+        const items = document.querySelectorAll('.project-item');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Formatting
+                buttons.forEach(b => {
+                    b.classList.remove('bg-white', 'text-black');
+                    b.classList.add('bg-white/5', 'text-secondary');
+                });
+                btn.classList.remove('bg-white/5', 'text-secondary');
+                btn.classList.add('bg-white', 'text-black');
+
+                const filter = btn.getAttribute('data-skill');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-skill') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.classList.add('is-visible'), 10); // Changed from fade-in to is-visible trigger if manually shown
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('is-visible');
+                    }
                 });
             });
         });
-        </script>
-    </section>
 
-    <section class="py-20 px-10 bg-gray-100" id="contact">
-        <div class="text-center mb-12 fade-in">
-            <h2 class="text-4xl text-gray-900 mb-4">Get In Touch</h2>
-            <p class="text-lg text-gray-600">Let's work together</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="mb-8 fade-in">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-900">Contact Information</h3>
-                <p class="text-gray-600 mb-2"><strong>Email:</strong> athalino71@gmail.com</p>
-                <p class="text-gray-600 mb-2"><strong>Location:</strong> Jakarta, Indonesia</p>
-                <div class="flex mt-6">
-                    <a href="https://www.linkedin.com/in/naufalathalinobakti/" target="_blank"LinkedIn" class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white mr-4 no-underline transition-all duration-300 hover:bg-gray-900 hover:translate-y-[-5px]">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                    <a href="https://github.com/athalino-bakti" aria-label="GitHub" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white mr-4 no-underline transition-all duration-300 hover:bg-gray-900 hover:translate-y-[-5px]">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    </a>
-                    <a href="https://www.instagram.com/athalino/" target="_blank" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white no-underline transition-all duration-300 hover:bg-gray-900 hover:translate-y-[-5px]">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md fade-in delay-1">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send Me a Message</h3>
-                <form id="contactForm">
-                    <div class="mb-6">
-                        <label for="name" class="block mb-2 font-medium">Name</label>
-                        <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-md text-base">
-                    </div>
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 font-medium">Email</label>
-                        <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-md text-base">
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block mb-2 font-medium">Message</label>
-                        <textarea id="message" name="message" required class="w-full p-3 border border-gray-300 rounded-md text-base min-h-[150px] resize-y"></textarea>
-                    </div>
-                    <button type="submit" class="bg-indigo-600 text-white border-none py-3 px-6 rounded-full cursor-pointer font-medium transition-all duration-300 border-2 border-indigo-600 hover:bg-transparent hover:text-indigo-600">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <footer class="bg-gray-900 text-white text-center py-8 px-10 fade-in delay-2">
-        <p class="mb-4">&copy; <span id="year"></span> Naufal Athalino Bakti. All rights reserved.</p>
-        <p class="text-sm">Built with relentless passion, bold dreams, and that daring spirit of youth.</p>
-    </footer>
-
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

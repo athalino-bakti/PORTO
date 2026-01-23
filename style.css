@@ -1,99 +1,126 @@
-/* Custom styles yang tidak bisa diganti penuh dengan Tailwind atau untuk override spesifik */
-@import "tailwindcss";
-/* Font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Linear Style Overrides */
+:root {
+  --color-bg-primary: #08090A;
+  --color-text-primary: #EDEDEF;
+  --color-text-secondary: #8A8F98;
+  --color-accent: #5E6AD2;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Nav Link Underline Hover Effect */
-/* Ini diperlukan karena Tailwind tidak memiliki utilitas langsung untuk efek pseudo-element yang dianimasikan */
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #4f46e5; /* Warna indigo-600 */
-  transition: width 0.3s ease-out;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* Added height for horizontal scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #2D2E33;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E4047;
 }
 
-nav ul li a:hover::after {
-  width: 100%;
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Hamburger menu activation untuk mobile */
-nav ul.active {
-  left: 0 !important; /* Mengoverride posisi default untuk tampilan mobile */
+
+/* Linear-style Button Glow */
+.btn-linear {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+.btn-linear:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%), rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0px 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
 }
 
-/* Animasi (tetap dipertahankan karena ini keyframe kustom) */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-primary-linear {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), #5E6AD2;
+  box-shadow: 0px 0px 0px 1px #5E6AD2, 0px 1px 2px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255,255,255,0.2);
+}
+.btn-primary-linear:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #6E79D6;
 }
 
+/* Card Glow Effect */
+.card-linear {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+.card-linear:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Header Glass */
+.glass-header {
+    background: rgba(8, 9, 10, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Gradient Text */
+.text-gradient {
+    background: linear-gradient(to bottom right, #FFFFFF 30%, #8A8F98 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animations State */
 .fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.delay-1 {
-  animation-delay: 0.2s;
-}
-
-.delay-2 {
-  animation-delay: 0.4s;
-}
-
-.delay-3 {
-  animation-delay: 0.6s;
-}
-
-/* Back to Top button opacity controlled by JS */
-.back-to-top {
   opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 999;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.back-to-top.active {
+.fade-in.is-visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-/* Penyesuaian responsif untuk navigasi mobile */
-@media screen and (max-width: 768px) {
-  nav ul {
-    position: fixed;
-    top: 80px; /* Sesuaikan dengan tinggi header Anda */
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: white;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-    transition: left 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  nav ul li {
-    margin: 1rem 0; /* Menimpa margin-left untuk tampilan mobile */
-  }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Grid Background Pattern */
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, #232426 1px, transparent 1px),
+    linear-gradient(to bottom, #232426 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
 }
 
-/* Tambahan agar ul dan li tidak overflow di mobile */
-@media (max-width: 640px) {
-  #experience-slider .flex-grow ul {
-    font-size: 0.95rem;
-    padding-left: 1rem;
-    text-align: left;
-    word-break: break-word;
-  }
-  #experience-slider .flex-grow {
-    text-align: center;
-  }
+/* Devicon filters */
+.devicon-img {
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+    transition: transform 0.3s ease;
+}
+.devicon-img:hover {
+    transform: scale(1.1);
 }
