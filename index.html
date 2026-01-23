@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -34,7 +36,7 @@
 <body class="bg-background text-gray-200 antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
     
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full glass-header z-50 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full glass-header z-50 transition-all duration-300" data-aos="fade-down" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
             <a href="#" class="text-xl font-semibold tracking-tight text-white hover:text-gray-300 transition-colors">
                 Athalino<span class="text-primary">.Works</span>
@@ -74,10 +76,10 @@
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex flex-col justify-center items-center pt-24 px-6 overflow-hidden">
         <!-- Background Glow -->
-        <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse-slow"></div>
         <div class="absolute inset-0 bg-grid-pattern -z-20 opacity-30"></div>
 
-        <div class="text-center max-w-4xl mx-auto z-10 fade-in">
+        <div class="text-center max-w-4xl mx-auto z-10" data-aos="scale-up" data-aos-duration="1000">
             <div class="mb-6 relative inline-block">
                 <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-b from-white/20 to-transparent mx-auto">
                     <img src="images/personal_photo.jpg" alt="Athalino Bakti" class="w-full h-full rounded-full object-cover border-2 border-background shadow-2xl">
@@ -88,11 +90,11 @@
                 Turning ideas into<br>impactful solutions.
             </h1>
             
-            <p class="text-lg md:text-xl text-secondary mb-10 max-w-2xl mx-auto leading-relaxed delay-1 fade-in">
+            <p class="text-lg md:text-xl text-secondary mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                 Hi, I'm <span class="text-white font-medium">Athalino Bakti</span>. I lead and organize digital projects with structured planning and user-focused execution.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center delay-2 fade-in">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
                 <a href="#projects" class="px-8 py-3 rounded-full text-white font-medium text-sm btn-primary-linear w-full sm:w-auto">
                     View My Work
                 </a>
@@ -112,7 +114,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Skills -->
-            <div class="card-linear rounded-2xl p-8 fade-in h-full">
+            <div class="card-linear rounded-2xl p-8 h-full" data-aos="fade-right" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                 <h3 class="text-lg font-medium text-white mb-6 border-b border-border pb-4">Skills</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                    <!-- Programming Languages -->
@@ -168,7 +170,7 @@
             </div>
 
             <!-- Tools -->
-            <div class="card-linear rounded-2xl p-8 fade-in h-full delay-1">
+            <div class="card-linear rounded-2xl p-8 h-full" data-aos="fade-left" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                 <h3 class="text-lg font-medium text-white mb-6 border-b border-border pb-4">Tools</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                     <div class="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
@@ -227,18 +229,18 @@
     <!-- Experience Section (Masonry/Grid) -->
     <section id="experience" class="py-24 px-6 bg-surface/50 border-y border-border">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 fade-in">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-semibold text-white mb-4">Experience</h2>
                 <p class="text-secondary text-sm">My professional journey.</p>
             </div>
 
             <!-- Work Experiences -->
             <div class="mb-16">
-                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4 fade-in">Work Experiences</h3>
+                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4" data-aos="fade-right">Work Experiences</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Card 1: OJK -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images\OJK.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="OJK">
                         </div>
@@ -256,7 +258,7 @@
                     </div>
 
                     <!-- Card 2: EAD Laboratory -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-1 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images\APSI.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="EAD Lab">
                         </div>
@@ -274,7 +276,7 @@
                     </div>
 
                     <!-- Card 3: DASPRO -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-2 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images/DASPRO.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="DASPRO">
                         </div>
@@ -293,7 +295,7 @@
                     </div>
 
                     <!-- Card 4: Market Day Event -->
-                     <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                     <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="400" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images/acarawr.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Event">
                         </div>
@@ -311,7 +313,7 @@
                     </div>
 
                     <!-- Card 5: PSI (SAG) -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="500" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images/PSI.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="PSI">
                         </div>
@@ -334,11 +336,11 @@
 
             <!-- Organizational Experiences -->
             <div>
-                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4 fade-in">Organizational Experiences</h3>
+                <h3 class="text-xl font-medium text-white mb-8 border-b border-border pb-4" data-aos="fade-right">Organizational Experiences</h3>
                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                     <!-- Card 1: Genesis HMSI -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images\PRC P.jpeg" class="w-full h-full object-cover object-[center_25%] transition-transform duration-500 group-hover:scale-105" alt="Genesis">
                         </div>
@@ -354,7 +356,7 @@
                     </div>
 
                     <!-- Card 2: JBC -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-1 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images\JBC.jpeg" class="w-full h-full object-cover object-[center_75%] transition-transform duration-500 group-hover:scale-105" alt="JBC">
                         </div>
@@ -370,7 +372,7 @@
                     </div>
 
                     <!-- Card 3: Cyvero -->
-                   <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-2 h-full flex flex-col">
+                   <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images/Messengger.JPG" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Cyvero">
                         </div>
@@ -386,7 +388,7 @@
                     </div>
 
                     <!-- Card 4: PKKMB -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-3 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="400" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images\PKKMB.jpeg" class="w-full h-full object-cover object-[center_80%] transition-transform duration-500 group-hover:scale-105" alt="PKKMB">
                         </div>
@@ -402,7 +404,7 @@
                     </div>
 
                     <!-- Card 5: Microsoft -->
-                    <div class="card-linear rounded-2xl p-0 overflow-hidden group fade-in delay-4 h-full flex flex-col">
+                    <div class="card-linear rounded-2xl p-0 overflow-hidden group h-full flex flex-col" data-aos="fade-up" data-aos-delay="500" data-tilt data-tilt-max="10" data-tilt-scale="1.02">
                         <div class="w-full h-48 overflow-hidden relative border-b border-border">
                             <img src="images/UCREW.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Microsoft">
                         </div>
@@ -425,8 +427,8 @@
 
     <!-- Projects Section -->
     <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-in">
-            <div class="mb-6 md:mb-0">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-right">
+            <div class="mb-10 md:mb-0">
                 <h2 class="text-3xl font-semibold text-white mb-2">Recent Projects</h2>
                 <p class="text-secondary text-sm">Selected works and case studies.</p>
             </div>
@@ -443,7 +445,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-list">
             <!-- DATA ANALYST PROJECTS -->
             <!-- 1. Retail Dashboard (Existing) -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-skill="Data Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="images\project-dashboard.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Retail Dashboard">
@@ -454,7 +456,7 @@
                 </div>
             </div>
             <!-- 2. Customer Churn Model -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-skill="Data Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="images\project-churn.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Churn Prediction">
@@ -465,7 +467,7 @@
                 </div>
             </div>
             <!-- 3. Supply Chain Analytics -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-skill="Data Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="images\project-supply-chain.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Supply Chain">
@@ -476,7 +478,7 @@
                 </div>
             </div>
             <!-- 4. Sentiment Analysis -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-skill="Data Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="images\project-sentiment.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Sentiment Analysis">
@@ -487,7 +489,7 @@
                 </div>
             </div>
             <!-- 5. Healthcare Resource -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Data Analyst">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-skill="Data Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="images\project-healthcare.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Healthcare Analytics">
@@ -500,7 +502,7 @@
 
             <!-- WEB APPLICATION PROJECTS -->
             <!-- 1. TaskMaster (Existing) -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="100" data-skill="Web Application" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-taskmaster.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="TaskMaster">
@@ -511,7 +513,7 @@
                 </div>
             </div>
             <!-- 2. LuxeLiving Real Estate -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="100" data-skill="Web Application" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-real-estate.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Real Estate">
@@ -522,7 +524,7 @@
                 </div>
             </div>
             <!-- 3. CryptoPulse -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="100" data-skill="Web Application" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-crypto.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Crypto Trading">
@@ -533,7 +535,7 @@
                 </div>
             </div>
             <!-- 4. FlavorHaven -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="100" data-skill="Web Application" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-recipe.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Recipe Social">
@@ -544,7 +546,7 @@
                 </div>
             </div>
             <!-- 5. Streamify -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="Web Application">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="100" data-skill="Web Application" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-streaming.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Streaming App">
@@ -557,7 +559,7 @@
 
             <!-- UI UX PROJECTS -->
             <!-- 1. FinFlow (Existing) -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="200" data-skill="UI UX" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-finflow.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="FinFlow">
@@ -568,7 +570,7 @@
                 </div>
             </div>
             <!-- 2. ZenTravel -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="200" data-skill="UI UX" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-travel.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Travel App">
@@ -579,7 +581,7 @@
                 </div>
             </div>
             <!-- 3. FitTrack -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="200" data-skill="UI UX" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-fitness.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Fitness Wearable">
@@ -590,7 +592,7 @@
                 </div>
             </div>
             <!-- 4. EcoSmart -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="200" data-skill="UI UX" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-smart-home.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Smart Home">
@@ -601,7 +603,7 @@
                 </div>
             </div>
             <!-- 5. NeonBanking -->
-            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="UI UX">
+            <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="200" data-skill="UI UX" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-neobank.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="NeoBank">
@@ -614,7 +616,7 @@
 
              <!-- SYSTEM ANALYST PROJECTS -->
              <!-- 1. Legacy Migration (Existing) -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="300" data-skill="System Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="images\project-migration.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Legacy Migration">
@@ -625,7 +627,7 @@
                 </div>
             </div>
              <!-- 2. Microservices -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="300" data-skill="System Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="https://image.pollinations.ai/prompt/microservices%20docker%20kubernetes%20cloud%20cluster%20diagram%20isometric%20purple%20neon?width=800&height=600&nologo=true&seed=101" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Microservices">
@@ -636,7 +638,7 @@
                 </div>
             </div>
              <!-- 3. ERP Integration -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="300" data-skill="System Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="https://image.pollinations.ai/prompt/complex%20erp%20data%20flow%20diagram%20logistics%20business%20system%20blue%20tech?width=800&height=600&nologo=true&seed=202" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="ERP Integration">
@@ -647,7 +649,7 @@
                 </div>
             </div>
              <!-- 4. Cybersecurity -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="300" data-skill="System Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="https://image.pollinations.ai/prompt/cybersecurity%20shield%20lock%20binary%20code%20protecting%20server%20network%20glowing%20red?width=800&height=600&nologo=true&seed=303" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Cybersecurity">
@@ -658,7 +660,7 @@
                 </div>
             </div>
              <!-- 5. Smart City -->
-             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-skill="System Analyst">
+             <div class="card-linear rounded-2xl overflow-hidden group project-item" data-aos="fade-up" data-aos-delay="300" data-skill="System Analyst" data-tilt data-tilt-max="5" data-tilt-scale="1.02">
                 <div class="h-48 overflow-hidden relative">
                      <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                      <img src="https://image.pollinations.ai/prompt/smart%20city%20iot%20sensors%20connected%20futuristic%20urban%20grid%20night%20view?width=800&height=600&nologo=true&seed=404" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Smart City IoT">
@@ -728,6 +730,10 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
