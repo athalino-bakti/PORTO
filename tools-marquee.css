@@ -1,0 +1,91 @@
+/* Only the enhanced tools section gets a moving track. */
+.tools-enhanced { overflow: hidden; }
+.tools-enhanced .tools-viewport {
+    overflow: hidden;
+    padding-block: 5px;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+.tools-enhanced .tools-track {
+    display: flex;
+    width: max-content;
+    animation: tools-drift 82s linear infinite;
+}
+.tools-enhanced .tools-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    flex-shrink: 0;
+    padding-right: 12px;
+}
+.tools-enhanced .tool-badge {
+    flex: 0 0 auto;
+    gap: 10px;
+    min-height: 48px;
+    padding: 9px 16px;
+    color: #565e74;
+    border-color: rgb(86 94 116 / 15%);
+    background: rgb(255 255 255 / 65%);
+    transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease;
+}
+.tools-enhanced .tool-badge > span:last-child { white-space: nowrap; font-size: 13px; }
+.tools-enhanced .tool-mark { display: inline-flex; flex-shrink: 0; width: 24px; align-items: center; justify-content: center; }
+.tools-enhanced .tool-mark svg { display: block; width: 24px; height: 26px; }
+.tools-enhanced .tools-controls { display: flex; justify-content: flex-end; margin-top: 10px; min-height: 36px; }
+.tools-enhanced .tools-motion-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+    padding: 6px 9px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: #565e74;
+    font: 500 11px Inter, sans-serif;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.tools-enhanced .tools-motion-toggle:hover { color: #00236f; background: #f0f1f4; border-color: rgb(86 94 116 / 14%); }
+.tools-enhanced .tools-viewport:focus-within .tools-track,
+.tools-enhanced.tools-manually-paused .tools-track,
+.tools-enhanced.tools-outside .tools-track,
+.page-hidden .tools-enhanced .tools-track { animation-play-state: paused; }
+
+@keyframes tools-drift {
+    to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (hover: hover) {
+    .tools-enhanced .tools-viewport:hover .tools-track { animation-play-state: paused; }
+    .tools-enhanced .tool-badge:hover { color: #00236f; border-color: rgb(0 35 111 / 26%); background-color: #fff; }
+}
+
+/* Static mode exposes every tool at once, including when motion is paused globally. */
+.tools-static .tools-viewport,
+.motion-paused .tools-enhanced .tools-viewport { -webkit-mask-image: none; mask-image: none; }
+.tools-static .tools-track,
+.motion-paused .tools-enhanced .tools-track { width: 100%; animation: none; transform: none; }
+.tools-static .tools-group,
+.motion-paused .tools-enhanced .tools-group { width: 100%; flex-wrap: wrap; padding-right: 0; }
+.tools-static .tools-copy,
+.motion-paused .tools-enhanced .tools-copy,
+.tools-static .tools-controls,
+.motion-paused .tools-enhanced .tools-controls { display: none; }
+
+@media (max-width: 639px) {
+    .tools-enhanced .tool-badge { padding: 8px 12px; gap: 8px; min-height: 44px; }
+    .tools-enhanced .tool-badge > span:last-child { font-size: 12px; }
+    .tools-enhanced .tools-group { gap: 9px; padding-right: 9px; }
+    .tools-enhanced .tools-motion-toggle { min-height: 44px; }
+    .tools-enhanced .tools-track { animation-duration: 96s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tools-enhanced .tools-viewport { -webkit-mask-image: none; mask-image: none; }
+    .tools-enhanced .tools-track { width: 100%; animation: none; transform: none; }
+    .tools-enhanced .tools-group { width: 100%; flex-wrap: wrap; padding-right: 0; }
+    .tools-enhanced .tools-copy, .tools-enhanced .tools-controls { display: none; }
+    .tools-enhanced .tool-badge, .tools-enhanced .tools-motion-toggle { transition: none; }
+}

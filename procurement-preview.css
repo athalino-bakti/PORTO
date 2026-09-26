@@ -1,0 +1,105 @@
+/* Lead project preview: the existing portfolio card treatment, with a process story. */
+.procurement-feature {
+    --proc-ink: #00236f;
+    --proc-muted: #565e74;
+    --proc-progress: 1;
+    padding: 36px;
+    border: 1px solid #cbd3e7;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 8px 28px rgb(29 43 61 / 4%);
+    overflow: hidden;
+}
+.proc-feature-heading, .proc-feature-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.proc-eyebrow { display: block; color: var(--proc-ink); font-size: 10px; line-height: 1.6; letter-spacing: .09em; text-transform: uppercase; font-weight: 600; }
+.proc-feature-label { display: inline-flex; align-items: center; gap: 6px; color: var(--proc-muted); font-size: 11px; white-space: nowrap; }
+.proc-feature-label > span { font-size: 8px; color: #4059aa; }
+.proc-feature-intro { margin: 22px 0 28px; max-width: 850px; }
+.procurement-feature .project-title { font: 700 clamp(28px, 3vw, 40px)/1.2 'Plus Jakarta Sans', sans-serif; letter-spacing: -.03em; }
+.proc-feature-subtitle { margin-top: 9px; color: var(--proc-ink); font-size: 18px; font-weight: 500; }
+.proc-feature-description { margin-top: 14px; color: #444651; font-size: 15px; line-height: 1.8; max-width: 800px; }
+.proc-preview { display: grid; grid-template-columns: minmax(0, .8fr) 48px minmax(0, 1.5fr); padding: 26px; border: 1px solid #e1e5ed; border-radius: 8px; background: linear-gradient(125deg, #f5f5f4, #f5f7fc); }
+.proc-preview-before > .proc-eyebrow { color: #757682; }
+.proc-file-stack { display: grid; gap: 12px; margin-top: 20px; }
+.proc-file { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px dashed #c5c5d3; border-radius: 4px; background: rgb(255 255 255 / 65%); color: #565e74; font-size: 11px; line-height: 1.5; }
+.proc-file:nth-child(2) { margin-left: 10px; }
+.proc-file:nth-child(3) { margin-right: 10px; }
+.proc-file svg { width: 17px; height: 22px; flex-shrink: 0; stroke: currentColor; stroke-width: 1.1; fill: none; opacity: .65; }
+.proc-file small { display: block; font-size: 10px; color: #757682; }
+.proc-preview-bridge { display: grid; place-items: center; color: #8a94b0; font-size: 24px; }
+.proc-preview-after { padding: 18px 20px; background: white; border: 1px solid #dce1ed; border-radius: 6px; }
+.proc-preview-after h4 { font: 600 16px/1.5 'Plus Jakarta Sans', sans-serif; margin-top: 5px; letter-spacing: -.02em; }
+.proc-mini-flow { position: relative; margin: 25px -8px 22px; }
+.proc-mini-stages { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; }
+.proc-mini-stages li { display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 11px; font-weight: 600; color: #565e74; }
+.proc-mini-stages small { display: block; margin-top: 3px; font-size: 9px; line-height: 1.4; color: #757682; font-weight: 400; }
+.proc-mini-node { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid #d6dce8; border-radius: 50%; margin-bottom: 8px; background: #fff; color: #fff; transition: background-color 250ms, border-color 250ms, box-shadow 250ms; }
+.proc-node-dot { width: 5px; height: 5px; border-radius: 50%; background: #b5bccd; }
+.proc-node-check { display: none; }
+.is-current .proc-mini-node { border-color: #4059aa; box-shadow: 0 0 0 4px rgb(64 89 170 / 8%); }
+.is-current .proc-node-dot { background: #00236f; }
+.is-complete .proc-mini-node { border-color: #00236f; background: #00236f; }
+.is-complete .proc-node-dot { display: none; }
+.is-complete .proc-node-check { display: block; }
+.proc-mini-rail { position: absolute; top: 12px; left: 12.5%; right: 12.5%; height: 1px; background: #dce1ed; }
+.proc-mini-line { display: block; width: 100%; height: 100%; background: #4059aa; transform-origin: left; transform: scaleX(var(--proc-progress)); transition: transform 650ms var(--ease-out); }
+.proc-mini-runner { display: block; position: absolute; top: -2px; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #4059aa; opacity: 0; transform: translateX(calc(var(--proc-progress) * var(--proc-rail-width, 0px))); transition: transform 650ms var(--ease-out), opacity 180ms; }
+.proc-preview-running .proc-mini-runner { opacity: 1; }
+.proc-preview-running .is-current .proc-mini-node { animation: proc-node-activate 450ms ease-out; }
+.proc-preview-finished .proc-mini-stages li:last-child .proc-node-check { animation: proc-check-in 400ms var(--ease-out); }
+.proc-preview-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 15px; border-top: 1px solid #e9ecf2; }
+.proc-balance-preview { border-radius: 4px; transition: background-color 300ms, box-shadow 300ms; }
+.proc-balance-preview > span { display: block; color: #565e74; font-size: 10px; }
+.proc-balance-preview strong { display: block; margin-top: 2px; color: #00236f; font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.proc-balance-preview small, .proc-preview-result small { display: block; color: #757682; font-size: 9px; margin-top: 4px; }
+.proc-preview-result { color: #315d55; text-align: right; font-size: 11px; }
+.proc-result-mark { display: inline-block; margin-right: 3px; }
+.proc-preview-running .proc-result-mark { opacity: 0; }
+.proc-feature-footer { margin-top: 25px; align-items: flex-end; }
+.proc-feature-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.proc-feature-tags > span { padding: 4px 8px; border-radius: 3px; color: #444651; background: #f3f4f3; font-size: 10px; font-weight: 500; }
+.proc-positioning { margin-top: 9px; color: #757682; font-size: 11px; line-height: 1.6; }
+.proc-feature-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.proc-preview-replay { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; color: #565e74; font-size: 11px; cursor: pointer; }
+.proc-preview-replay:hover { color: #00236f; }
+.procurement-feature .procurement-explore { margin: 0; font-size: 13px; white-space: nowrap; }
+.proc-scope-note { margin-top: 20px; padding-top: 14px; border-top: 1px solid #e9ecf2; font-size: 10px; line-height: 1.7; color: #757682; }
+.proc-preview-running .proc-balance-preview, .procurement-feature:focus-within .proc-balance-preview { background: #f0f4fd; box-shadow: 0 0 0 7px #f0f4fd; }
+@media (hover: hover) and (pointer: fine) {
+    .procurement-feature:hover .proc-balance-preview { background: #f0f4fd; box-shadow: 0 0 0 7px #f0f4fd; }
+}
+@keyframes proc-node-activate { 50% { transform: scale(1.09); } }
+@keyframes proc-check-in { from { transform: scale(.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (max-width: 900px) {
+    .procurement-feature { padding: 28px; }
+    .proc-preview { grid-template-columns: minmax(0, .8fr) 30px minmax(0, 1.5fr); padding: 18px; }
+    .proc-preview-after { padding: 16px; }
+    .proc-feature-footer { flex-direction: column; align-items: flex-start; }
+    .proc-feature-actions { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 20px; }
+}
+@media (max-width: 639px) {
+    .procurement-feature { padding: 22px; }
+    .proc-feature-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
+    .proc-feature-intro { margin-top: 18px; }
+    .proc-feature-subtitle { font-size: 16px; line-height: 1.6; }
+    .proc-feature-description { font-size: 14px; line-height: 1.8; }
+    .proc-preview { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; }
+    .proc-file-stack { gap: 6px; margin-top: 12px; }
+    .proc-file { padding: 8px 10px; }
+    .proc-preview-bridge { height: 20px; }
+    .proc-preview-bridge span { transform: rotate(90deg); }
+    .proc-preview-after { padding: 16px 12px; }
+    .proc-preview-after h4 { font-size: 15px; }
+    .proc-mini-stages small { font-size: 8px; padding-inline: 2px; }
+    .proc-balance-preview strong { font-size: 15px; }
+    .proc-preview-bottom { flex-wrap: wrap; gap: 14px; }
+    .proc-preview-result { text-align: left; }
+    .proc-feature-actions { gap: 8px 20px; }
+    .proc-preview-replay { min-height: 44px; }
+}
+.motion-paused .proc-mini-runner { display: none; }
+@media (prefers-reduced-motion: reduce) {
+    .proc-mini-runner { display: none; }
+    .proc-preview-running .proc-mini-node, .proc-preview-finished .proc-node-check { animation: none; }
+    .procurement-feature *, .procurement-feature *::before, .procurement-feature *::after { transition: none; }
+}
